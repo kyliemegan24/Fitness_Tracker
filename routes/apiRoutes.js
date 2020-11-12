@@ -14,7 +14,10 @@ module.exports = function(app){
 
     app.post("/api/workouts", function (req,res){
         Workout.create({})
-        .then(data => res.json(data))
+        .then(data => {
+            console.log("here it is", data);
+            res.json(data)}
+            )
         .catch(err => {
             res.json(err)
         })
@@ -32,7 +35,10 @@ module.exports = function(app){
 
     app.post("/api/workouts/range", function(req, res) {
         Workout.create({})
-        .then(data => res.json(data))
+        .then(data => {
+            console.log(data);
+            res.json(data)}
+            )
         .catch(err => {
             res.json(err)
         })
